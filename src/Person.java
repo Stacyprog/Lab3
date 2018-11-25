@@ -1,10 +1,10 @@
-public class Person extends Habitat {
+public class Person extends Habitat implements Acting {
     Road path = new Road();
     Person(String name) {
         super.name = name;
     }
 
-    void go(String place) {
+    public void move(String place) {
         path.setPlace(place);
         System.out.println(name + " пошагал на место: " + path.getPlace());
 
@@ -14,7 +14,7 @@ public class Person extends Habitat {
         System.out.println("Настроение : солнечное и безоблачное");
     }
 
-    boolean thoughts() {
+    boolean think() {
         if (path.getPlace().equals("Дорожка")) {
             System.out.print("Если я встану на нижнюю перекладину перил моста и наклонюсь над рекой, ");
             System.out.print("я узнаю все-все на свете и тогда я расскажу все это Пуху, который пока ");

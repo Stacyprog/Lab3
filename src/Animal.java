@@ -1,42 +1,45 @@
 
 
 public class Animal extends Habitat implements Speech, Acting {
-    Forest point;
+    Forest place;
     public String type;
 
-    Animal(String name, Forest area) {
+    Animal(String name) {
         super.name = name;
-        this.point = area;
-        switch (this.point) {
-            case GLADE:
-                this.type = "Поле";
-                break;
-            case REEDS:
-                this.type = "Камыши";
-                break;
-            case SWAMP:
-                this.type = "Болото";
-                break;
-            case BRIDGE:
-                this.type = "Мост";
-                break;
-        }
     }
+
+    public void move(Forest place) {
+        this.place = place;
+        switch (this.place) {
+            case FIELD: {
+                System.out.println(name + " находится на поле");
+                break;
+            }
+            case REEDS: {
+                System.out.println(name + " вышел из камышей в поле");
+                break;
+            }
+            case PATH:
+            {
+                System.out.println(name + " пошел домой по дорожке");
+                break;
+            }
+            case BRIDGE:
+            {
+                System.out.println(name + " стоит на мосту и ждет Кристофера");
+            }
+        }
+
+
+    }
+
     public void ask(String a) {
         System.out.println(name + " спрашивает " + a);
     }
+
     public void answer() {
         System.out.println(name + " отвечает");
     }
-    public void move() {
-        if (point == Forest.GLADE) {
-            System.out.println(name + "находится на месте: " + type);
-        }
-        else if (point == Forest.REEDS) {
-            System.out.println(name + " вышел из места : " + type);
-        }
-    }
-
 
    @Override
     public boolean equals(Object object) {

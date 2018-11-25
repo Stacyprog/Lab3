@@ -1,4 +1,4 @@
 
 public interface Acting {
-    void move();
+    void move(Forest place);
 }

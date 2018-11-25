@@ -1,8 +1,8 @@
 
 
 public enum   Forest {
-       GLADE,
+       FIELD,
        REEDS,
-       SWAMP,
+       PATH,
        BRIDGE
 }
