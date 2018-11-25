@@ -31,6 +31,7 @@ public class Person extends Habitat implements Acting, Speech{
     }
 
     void think() {
+        know();
         switch (place) {
             case PATH: {
                 System.out.print("\"Если я встану на нижнюю перекладину перил моста и наклонюсь над рекой, ");
@@ -51,7 +52,6 @@ public class Person extends Habitat implements Acting, Speech{
                 break;
             }
         }
-        know();
     }
 
     public void ask(String a) {
@@ -65,11 +65,11 @@ public class Person extends Habitat implements Acting, Speech{
     @Override
     public void know() {
         setKnowledge("Знает 2х19");
-        if ((place.equals(Forest.BRIDGE)) && (Forest.FIELD.getNoise())) {
-            if (!place.getNoise()) {
-                setKnowledge("Знает всё-всё на свете");
-            } else {
+        if (place.equals(Forest.BRIDGE)) {
+            if (Forest.FIELD.getNoise()) {
                 setKnowledge("Сегодня день, когда нужно что-то сделать.");
+            } else {
+                setKnowledge("Знает всё-всё на свете");
             }
         }
     }
