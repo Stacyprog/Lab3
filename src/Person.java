@@ -29,24 +29,21 @@ public class Person extends Habitat implements Acting {
         System.out.println("Настроение : солнечное и безоблачное");
     }
 
-    boolean think() {
+    void think() {
         switch (place) {
             case PATH: {
                 System.out.print("Если я встану на нижнюю перекладину перил моста и наклонюсь над рекой, ");
                 System.out.print("я узнаю все-все на свете и тогда я расскажу все это Пуху, который пока ");
                 System.out.println("еще знает не все на свете. - подумал " + name);
-                return true;
                 break;
             }
             case BRIDGE: {
                 System.out.print("Сегодня день, когда нужно что-то сделать.");
                 System.out.println(" - подумал " + name + ", увидев своих друзей.");
-                return true;
                 break;
             }
             default: {
                 System.out.println("никаких планов на день. - подумал " + name);
-                return false;
                 break;
             }
         }
