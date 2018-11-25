@@ -1,19 +1,15 @@
 
 
-public class Animals extends Existance implements Speech, Acting {
+public class Animal extends Habitat implements Speech, Acting {
     Forest point;
     public String type;
-    static boolean friends = false;
-    Animals() {
 
-    }
-    Animals(String name, Forest area) {
+    Animal(String name, Forest area) {
         super.name = name;
         this.point = area;
         switch (this.point) {
             case GLADE:
                 this.type = "Поле";
-                this.friends = true;
                 break;
             case REEDS:
                 this.type = "Камыши";
@@ -33,7 +29,12 @@ public class Animals extends Existance implements Speech, Acting {
         System.out.println(name + " отвечает");
     }
     public void move() {
-        System.out.println(name + "находится на месте: " + point);
+        if (point == Forest.GLADE) {
+            System.out.println(name + "находится на месте: " + type);
+        }
+        else if (point == Forest.REEDS) {
+            System.out.println(name + " вышел из места : " + type);
+        }
     }
 
 

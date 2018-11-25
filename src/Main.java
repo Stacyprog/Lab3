@@ -1,19 +1,17 @@
 
 public class Main {
     public static void main(String[] args) {
-        Animals pooh = new Animals("Винни", Forest.REEDS);
-        Animals ia = new Animals("Иа", Forest.REEDS);
-        AnimalsOutView Tiger = new AnimalsOutView("Тигруля", Forest.REEDS);
+        Animal pooh = new Animal("Винни", Forest.REEDS);
+        Animal ia = new Animal("Иа", Forest.REEDS);
+        Animal Tiger = new Animal("Тигруля", Forest.REEDS);
         pooh.ask(ia.name);
         ia.answer();
         Tiger.move();
         Person Chris = new Person("Кристофер Робин");
         Chris.go("Дорожка");
         Chris.mood();
-        Chris.dreams();
+        Chris.thoughts();
         Chris.go("Мост");
-        Chris.dreams();
-
-
+        Chris.thoughts();
     }
 }

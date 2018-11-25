@@ -1,5 +1,5 @@
 
-abstract class Existance {
+abstract class Habitat {
     String name;
     @Override
     public boolean equals(Object object) {
