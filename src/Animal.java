@@ -10,6 +10,7 @@ public class Animal extends Habitat implements Speech, Acting {
 
     public void move(Forest place) {
         this.place = place;
+        place.setNoise();
         switch (this.place) {
             case FIELD: {
                 System.out.println(name + " находится на поле");
