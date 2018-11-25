@@ -35,11 +35,11 @@ public class Animal extends Habitat implements Speech, Acting {
     }
 
     public void ask(String a) {
-        System.out.println(name + " спрашивает " + a);
+        System.out.println(name + " спрашивает " + a + ": \"Как тебя зовут?\"");
     }
 
     public void answer() {
-        System.out.println(name + " отвечает");
+        System.out.println(name + " отвечает: \"Меня зовут...\"");
     }
 
    @Override
