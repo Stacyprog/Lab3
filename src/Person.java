@@ -1,10 +1,12 @@
-public class Person extends Habitat implements Acting, Speech{
-    Forest place;
-    Person(String name) {
-        super.name = name;
+public class Person extends Creatures {
+    Location place;
+
+    public Person (String name) {
+        super(name);
     }
 
-    public void move(Forest place) {
+    @Override
+    public void move(Location place) {
         this.place = place;
         switch (this.place) {
             case FIELD: {
@@ -30,7 +32,6 @@ public class Person extends Habitat implements Acting, Speech{
     }
 
     void think() {
-        //know();
         switch (place) {
             case PATH: {
                 System.out.print("\"Если я встану на нижнюю перекладину перил моста и наклонюсь над рекой, ");
@@ -56,25 +57,16 @@ public class Person extends Habitat implements Acting, Speech{
         }
     }
 
-    public void ask(String a) {
-        System.out.println(name + " спрашивает " + a);
-    }
-
-    public void answer() {
-        System.out.println(name + " отвечает");
-    }
-
-    @Override
     public void know() {
-        setKnowledge(" знает, сколько будет дважды девятнадцать");
-        if (place.equals(Forest.BRIDGE)) {
+        addKnowledge(" знает, сколько будет дважды девятнадцать");
+        if (place.equals(Location.BRIDGE)) {
             if ((place.getNoise() == 0 )  || (place.getNoise() == 1)) {
-                setKnowledge(" знает базовую математику");
+                addKnowledge(" знает базовую математику");
             } else {
-                setKnowledge(" знает все-все на свете");
+                addKnowledge(" знает все-все на свете");
             }
         }
-        System.out.println(name + getKnowledge());
+        System.out.println(name + getKnowledge()[getKnowledge().length - 1]);
     }
 
     @Override

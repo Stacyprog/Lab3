@@ -1,4 +1,4 @@
 public interface Speech {
-    void ask(String a);
-    void answer();
+    String ask(String a);
+    String answer(String a);
 }

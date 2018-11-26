@@ -4,14 +4,15 @@ public class Main {
         Animal Pooh = new Animal("Винни");
         Animal Ia = new Animal("Иа");
         Animal Tiger = new Animal("Тигруля");
-        Pooh.ask(Ia.name);
-        Ia.answer();
-        Tiger.move(Forest.PATH);
+        Pooh.move(Location.FIELD);
+        System.out.println(Pooh.ask("Как тебя зовут?"));
+        System.out.println(Ia.answer("Меня зовут..."));
+        Tiger.move(Location.REEDS);
         Person Chris = new Person("Кристофер Робин");
-        Chris.move(Forest.PATH);
+        Chris.move(Location.PATH);
         Chris.mood();
         Chris.think();
-        Chris.move(Forest.BRIDGE);
+        Chris.move(Location.BRIDGE);
         Chris.think();
         Chris.know();
     }
