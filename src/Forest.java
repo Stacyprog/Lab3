@@ -5,13 +5,13 @@ public enum   Forest {
        REEDS,
        PATH,
        BRIDGE ;
-       private boolean noise = false;
+       static int noise;
 
-       public boolean getNoise() {
+       public int getNoise() {
               return noise;
        }
 
-       public void setNoise() {
-              noise = true;
+       public void setNoise(Forest place) {
+              noise = place.ordinal();
        }
 }

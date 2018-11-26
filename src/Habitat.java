@@ -1,12 +1,16 @@
 
 abstract class Habitat {
     String name;
-    private String knowlege = "Ничего не знает";
-    public void setKnowlege(String knowlege) {
-        this.knowlege = knowlege;
+    private String knowledge = "Ничего не знает";
+    public void setKnowledge(String knowledge) {
+        this.knowledge = knowledge;
     }
-    public String getKnowlege() {
-        return knowlege;
+    public String getKnowledge() {
+        return knowledge;
+    }
+
+    void know() {
+        System.out.println(getKnowledge());
     }
 
     @Override
