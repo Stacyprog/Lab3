@@ -1,15 +1,15 @@
-public enum   Location {
-    FIELD,
-    REEDS,
-    PATH,
-    BRIDGE;
-    static int noise;
-
+public enum  Location {
+    FIELD(0),
+    REEDS(1),
+    PATH(2),
+    BRIDGE(3);
+    private final int noise;
     public int getNoise() {
         return noise;
     }
 
-    public void setNoise(Location place) {
-        noise = place.ordinal();
+    Location(int noise) {
+       this.noise = noise;
     }
+
 }

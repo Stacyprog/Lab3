@@ -1,4 +1,4 @@
-public class Person extends Creatures {
+public class Person extends Creature {
     Location place;
 
     public Person (String name) {

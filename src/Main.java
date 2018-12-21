@@ -5,7 +5,7 @@ public class Main {
         Animal Ia = new Animal("Иа");
         Animal Tiger = new Animal("Тигруля");
         Pooh.move(Location.FIELD);
-        System.out.println(Pooh.ask("Как тебя зовут?"));
+        Pooh.ask("Как тебя зовут?");
         System.out.println(Ia.answer("Меня зовут..."));
         Tiger.move(Location.REEDS);
         Person Chris = new Person("Кристофер Робин");

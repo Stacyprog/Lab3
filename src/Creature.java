@@ -1,17 +1,17 @@
 
 import java.util.Arrays;
 
-abstract class Creatures implements Speech, Acting{
+abstract class Creature implements Speech, Acting{
     String name;
     private String[] knowledge = new String[1];
 
-    public Creatures(String name) {
+    public Creature(String name) {
         this.name = name;
         knowledge[0] = "Ничего не знает";
     }
 
-    public String ask(String question) {
-        return(name + " спрашивает: \"" + question + "\"");
+    public void ask(String question) {
+        System.out.println(name + " спрашивает: \"" + question + "\"");
     }
 
     public String answer(String ans) {
@@ -34,7 +34,7 @@ abstract class Creatures implements Speech, Acting{
 
     @Override
     public String toString() {
-        return "Creatures [x = " + name + "]";
+        return "Creature [x = " + name + "]";
     }
 
     @Override

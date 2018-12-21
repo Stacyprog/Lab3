@@ -1,5 +1,8 @@
-public class Animal extends Creatures {
+import java.util.Objects;
+
+public class Animal extends Creature {
     Location place;
+
     Animal(String name) {
         super(name);
     }
@@ -9,42 +12,48 @@ public class Animal extends Creatures {
         switch (this.place) {
             case FIELD: {
                 System.out.println(name + " находится на поле");
-                this.place.setNoise(Location.FIELD);
+                this.place.getNoise();
                 break;
             }
             case REEDS: {
                 System.out.println(name + " вышел из камышей в поле");
-                this.place.setNoise(Location.REEDS);
+                this.place.getNoise();
                 break;
             }
-            case PATH:
-            {
+            case PATH: {
                 System.out.println(name + " пошел домой по дорожке");
-                this.place.setNoise(Location.PATH);
+                this.place.getNoise();
                 break;
             }
-            case BRIDGE:
-            {
+            case BRIDGE: {
                 System.out.println(name + " стоит на мосту и ждет Кристофера");
-                this.place.setNoise(Location.BRIDGE);
+                this.place.getNoise();
                 break;
             }
         }
     }
 
     @Override
-    public boolean equals(Object object) {
-        return this == object;
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if (o == null)
+            return false;
+        if (o.getClass() != this.getClass())
+            return false;
+        Animal animal = (Animal) o;
+        return this.place == animal.place
+                && name == animal.name;
     }
 
     @Override
     public String toString() {
-        return "Animals [x = " + name +  "]";
+        return "Animals [x = " + name + "]";
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(name, place)
     }
 
 }
